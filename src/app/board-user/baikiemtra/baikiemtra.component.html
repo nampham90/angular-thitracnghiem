@@ -1,0 +1,97 @@
+<!-- Button trigger modal -->
+
+
+       
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Danh Sách Bài Kiểm Tra</a>
+          <div class="d-flex">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="SaveBaikiemtra()" type="submit">Làm bài kiểm tra</button>
+          </div>
+        </div>
+    </nav>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Mã Đề Thi</th>
+                <th>Trình Độ</th>
+                <th>Điểm</th>
+                <th>Kết Quả</th>
+                <th>Thi Lại</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                <td>DT002</td>
+                <td>N5</td>
+                <td>8.0</td>
+                <td>Đậu</td>
+                <td><a class="btn btn-primary" href="#" role="button">Thi Lại</a></td>
+                <td>
+                    <input type="button" (click)="EditBaikiemtra()" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Edit" class="btn btn-success">
+                    <input type="button" (click)="DeleteBaikiemtra()" value="Delete" class="btn btn-danger">
+                </td>
+            </tr>
+            <tr>
+                <td>DT002</td>
+                <td>N5</td>
+                <td>8.0</td>
+                <td>Đậu</td>
+                <td><a class="btn btn-primary" href="#" role="button">Thi Lại</a></td>
+                <td>
+                    <input type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Edit" class="btn btn-success">
+                    <input type="button" value="Delete" class="btn btn-danger">
+                </td>
+            </tr>
+            <tr>
+                <td>DT001</td>
+                <td>N5</td>
+                <td>8.0</td>
+                <td>Đậu</td>
+                <td><a class="btn btn-primary" href="#" role="button">Thi Lại</a></td>
+                <td>
+                    <input type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Edit" class="btn btn-success">
+                    <input type="button" value="Delete" class="btn btn-danger">
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="BaiKiemTraValue">
+                   <div class="mb-3">
+                     <label for="iddethi" class="form-label">ID Đề Thi</label>
+                     <input type="text" class="form-control" formControlName="iddethi"  placeholder="ID đề thi">
+                   </div>
+                   <div class="mb-3">
+                     <label for="trinhdo" class="form-label">Trình Độ</label>
+                     <input type="text" class="form-control" formControlName="trinhdo" placeholder="Trình độ">
+                   </div>
+                   <div class="mb-3">
+                     <label for="diem" class="form-label">Điểm</label>
+                     <input type="text" class="form-control" formControlName="diem" placeholder="Điểm">
+                   </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button *ngIf="btnSaveShow" type="button" class="btn btn-primary" (click)="AddBaikiemtra()" >Register</button>
+                <button *ngIf="btnUpdateShow" type="button" class="btn btn-primary" (click)="UpdateBaiKiemtra()" >Update</button>
+            </div>
+            </div>
+        </div>
+        </div>
+ 
+

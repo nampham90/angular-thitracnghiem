@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class BaiKiemTra {\n  constructor() {\n    this.IDTheThi = \"\";\n    this.TrinhDo = \"\";\n    this.Diem = 0;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
