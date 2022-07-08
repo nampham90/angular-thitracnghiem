@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListtrinhdoComponent } from './listtrinhdo/listtrinhdo.component';
 import { ListtheotrinhdoComponent } from './listtrinhdo/listtheotrinhdo/listtheotrinhdo.component';
 import {MaterialModule} from '../material.module';
+import { ChitietDethiComponent } from './chitiet-dethi/chitiet-dethi.component';
 
 
 
@@ -16,6 +17,7 @@ import {MaterialModule} from '../material.module';
     TaodethiComponent,
     ListtrinhdoComponent,
     ListtheotrinhdoComponent
+    ChitietDethiComponent
   ],
   imports:[
       CommonModule,
