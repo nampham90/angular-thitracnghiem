@@ -26,6 +26,8 @@ import {MaterialModule} from './material.module'
 
 import {HttpErrorService} from './http_interceptors/http-error.service'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BoardUserModule } from './board-user/board-user.module';
+import { FooterComponent } from './_footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     BoardUserComponent,
     BaikiemtraComponent,
     NotfoundComponent,
-    LoadingComponent
+    LoadingComponent,
+    FooterComponent,
     
   ],
   imports: [
@@ -50,7 +53,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    BoardUserModule
     
 
   ],

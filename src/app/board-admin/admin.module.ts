@@ -16,7 +16,7 @@ import { ChitietDethiComponent } from './chitiet-dethi/chitiet-dethi.component';
     AdminComponent,
     TaodethiComponent,
     ListtrinhdoComponent,
-    ListtheotrinhdoComponent
+    ListtheotrinhdoComponent,
     ChitietDethiComponent
   ],
   imports:[

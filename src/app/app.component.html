@@ -1,12 +1,12 @@
 
 <app-loading></app-loading>
 <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <nav class="navbar navbar-expand navbar-dark bg">
     <a href="#" class="navbar-brand">Trắc Nghiệm Tiếng Nhật</a>
     
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item">
-        <a href="/home" class="nav-link" routerLink="home">Home </a>
+        <a href="/" class="nav-link" routerLink="">Home </a>
       </li>
       <li class="nav-item" *ngIf="showAdminBoard">
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
@@ -37,8 +37,15 @@
       </li>
     </ul>
   </nav>
-
+  <!-- <div class="banner">
+    <div class="fullscan_video_play">
+      <video src="../assets/video_bg.mp4" autoplay="true" loop="true"></video>
+    </div>
+    <div class="h-overplay"></div>
+    <div class="content"></div>
+  </div> -->
   <div class="container">
     <router-outlet></router-outlet>
   </div>
+  <app-footer></app-footer>
 </div>

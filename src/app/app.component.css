@@ -1,2 +1,9 @@
 
+.banner .fullscan_video_play video{
+    height: 300px;
+    width: 100%;
+}
 
+.bg{
+    background-color: #0f0f0f;
+}

@@ -11,14 +11,17 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
+  { path: 'user', 
+    loadChildren: ()=> import('./board-user/board-user.module')
+    .then(m => m.BoardUserModule) 
+  },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent}
 ];
 
