@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BaiKiemTra } from "../../model/baikiemtra";
+import { Router,ParamMap,ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-baikiemtra',
@@ -9,64 +12,31 @@ import { BaiKiemTra } from "../../model/baikiemtra";
 })
 export class BaikiemtraComponent implements OnInit {
   
-  BaiKiemTraValue!: FormGroup;
 
-  btnSaveShow:boolean=true;
 
-  btnUpdateShow:boolean=false;
+  name:any;
 
-  baikiemtraojb: BaiKiemTra =new BaiKiemTra;
+  id:any;
 
-  constructor(private formBuider:FormBuilder) { }
+  constructor(
+    private formBuider:FormBuilder,
+    private route : ActivatedRoute
+    
+    ) { }
 
   ngOnInit(): void {
-    this.BaiKiemTraValue=this.formBuider.group({
-        iddethi: ['',Validators.required],
-        trinhdo: ['',Validators.required],
-        diem: ['',Validators.required]
-
-    })
-  }
-
-  AddBaikiemtra(){
-
-     this.baikiemtraojb.IDTheThi=this.BaiKiemTraValue.value.iddethi;
-     this.baikiemtraojb.TrinhDo=this.BaiKiemTraValue.value.trinhdo;
-     this.baikiemtraojb.Diem=this.BaiKiemTraValue.value.diem;
-
-     console.log(this.baikiemtraojb);
+   
+    const params = this.route.snapshot.paramMap;
+    this.id = params.get('id');
 
   }
 
-  UpdateBaiKiemtra(){
-     
-  }
+ 
 
 
-  DeleteBaikiemtra(){
-    
-  }
-
-  SaveBaikiemtra(){
-     this.SaveShowBtn();
-  }
 
   
-  EditBaikiemtra(){
-     
-     this.UpdateShowBtn();
-  }
 
-  UpdateShowBtn()
-  {
-    this.btnUpdateShow = true;
-    this.btnSaveShow = false;
-  }
-  SaveShowBtn()
-  {
-    this.btnUpdateShow = false;
-    this.btnSaveShow = true;
-  }
 
 
 }

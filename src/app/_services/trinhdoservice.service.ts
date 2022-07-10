@@ -22,8 +22,8 @@ export class TrinhdoserviceService {
     private httpError:HttpErrorService
     ) { }
   
-  getListTrinhdo(data: any): Observable<any>{
-      return this.http.post(AUTH_API+"listtrinhdo",data,httpOptions);
+  getListTrinhdo(): Observable<any>{
+      return this.http.get(AUTH_API+"listtrinhdo",httpOptions);
   }
 
   getDatatest():Observable<any>{

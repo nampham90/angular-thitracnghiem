@@ -1,3 +1,49 @@
-<div class="container">
-    <h1>main Board-use</h1>
-</div>
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened="true">
+        <div class="nga-container-sidebar">
+            <ul class="list-unstyled p-2">
+              <li class="mb-1">
+                <button mat-raised-button data-bs-toggle="collapse"
+                  data-bs-target="#home-collapse" aria-expanded="true"><mat-icon>folder</mat-icon>
+                  Đề Thi
+                </button>
+                <div class="collapse" id="home-collapse">
+                    <mat-nav-list>
+                        <a mat-list-item [routerLink]="['dethi/n5']"><mat-icon>arrow_right_alt</mat-icon> N5 </a>
+                        <a mat-list-item [routerLink]="['dethi/n4']"><mat-icon>arrow_right_alt</mat-icon> N4 </a>
+                        <a mat-list-item [routerLink]="['dethi/n3']"><mat-icon>arrow_right_alt</mat-icon> N3 </a>
+                        <a mat-list-item [routerLink]="['dethi/n2']"><mat-icon>arrow_right_alt</mat-icon> N2 </a>
+                        <a mat-list-item [routerLink]="['dethi/n1']"><mat-icon>arrow_right_alt</mat-icon> N1 </a>
+                     </mat-nav-list>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button mat-raised-button data-bs-toggle="collapse"
+                  data-bs-target="#orders-collapse" aria-expanded="true"><mat-icon>folder</mat-icon>
+                  Tài Khoản
+                </button>
+                <div class="collapse" id="orders-collapse">
+                    <mat-nav-list>
+                        <!-- <a mat-list-item routerLink="dethi/{{link}}" *ngFor="let link of typesOfShoes"><mat-icon>arrow_right_alt</mat-icon> {{ link }} </a> -->
+                     </mat-nav-list>
+                </div>
+              </li>
+              <li class="border-top my-3"></li>
+              <li class="mb-1">
+                <button mat-raised-button data-bs-toggle="collapse"
+                  data-bs-target="#account-collapse" aria-expanded="false"><mat-icon>folder</mat-icon>
+                  Cài đặt
+                </button>
+                <div class="collapse" id="account-collapse">
+                    <mat-nav-list>
+                        <!-- <a mat-list-item [routerLink]="['dethi/',link]" *ngFor="let link of typesOfShoes"><mat-icon>arrow_right_alt</mat-icon> {{ link }} </a> -->
+                     </mat-nav-list>
+                </div>
+              </li>
+            </ul>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>

@@ -28,6 +28,7 @@ import {HttpErrorService} from './http_interceptors/http-error.service'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BoardUserModule } from './board-user/board-user.module';
 import { FooterComponent } from './_footer/footer/footer.component';
+import { DethiModule } from './board-user/dethi/dethi.module';
 
 @NgModule({
   declarations: [
@@ -46,17 +47,17 @@ import { FooterComponent } from './_footer/footer/footer.component';
     
   ],
   imports: [
+    AppRoutingModule,
     AdminModule,
     BrowserModule,
-    AppRoutingModule,
+    
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    BoardUserModule
-    
-
+    BoardUserModule,
+    DethiModule,
   ],
   providers: [
     authInterceptorProviders,

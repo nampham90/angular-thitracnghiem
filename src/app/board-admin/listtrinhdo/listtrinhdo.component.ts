@@ -21,15 +21,15 @@ export class ListtrinhdoComponent implements OnInit {
   }
 
   getListTrinhdo(){
-     if(this.tokenstorage.getUser()){
-         this.listtrinhdo.getListTrinhdo(this.tokenstorage.getUser())
-            .subscribe(res=>{
-               this.list=res;
-               console.log(this.list);
-            },err=>{
-              console.log(err);
-            });
-     }
+    //  if(this.tokenstorage.getUser()){
+    //      this.listtrinhdo.getListTrinhdo(this.tokenstorage.getUser())
+    //         .subscribe(res=>{
+    //            this.list=res;
+    //            console.log(this.list);
+    //         },err=>{
+    //           console.log(err);
+    //         });
+    //  }
   }
 
 }
