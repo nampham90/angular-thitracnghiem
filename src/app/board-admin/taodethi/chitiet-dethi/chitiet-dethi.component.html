@@ -1,0 +1,232 @@
+<h1 class="bold">Chi tiết đề thi {{id}}</h1>
+<!-- #docregion align-start -->
+<h2>Phần I: Kanji & từ vựng</h2>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Chữ kanji">
+        <div class="group-cauhoi" *ngFor="let row of listtcauhoi_phan1_part1">
+            <h3>Câu hỏi {{row.id}}</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Câu: {{row.id}}</mat-label>
+                <textarea matInput>{{row.cauhoi}}</textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="traloi-width" appearance="fill" *ngFor="let tl of row.traloi; let idx = index">
+                <mat-label>Câu trả lời {{idx + 1}}</mat-label>
+                <input matInput value="{{tl}}">
+                <br>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="dapan-width" appearance="fill">
+                <mat-label>Đáp án</mat-label>
+                <input matInput value="{{row.dapan}}">
+            </mat-form-field>
+
+        </div>
+    </mat-tab>
+    <mat-tab label="Từ vựng 1">
+        <div class="group-cauhoi" *ngFor="let row of listtcauhoi_phan1_part2">
+            <h3>Câu hỏi {{row.id}}</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Câu: {{row.id}}</mat-label>
+                <textarea matInput>{{row.cauhoi}}</textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="traloi-width" appearance="fill" *ngFor="let tl of row.traloi; let idx = index">
+                <mat-label>Câu trả lời {{idx + 1}}</mat-label>
+                <input matInput value="{{tl}}">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="dapan-width" appearance="fill">
+                <mat-label>Đáp án</mat-label>
+                <input matInput value="{{row.dapan}}">
+            </mat-form-field>
+
+        </div>
+    </mat-tab>
+    <mat-tab label="Từ vựng 2">
+        <div class="group-cauhoi" *ngFor="let row of listtcauhoi_phan1_part3">
+            <h3>Câu hỏi {{row.id}}</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Câu: {{row.id}}</mat-label>
+                <textarea matInput>{{row.cauhoi}}</textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="traloi-width" appearance="fill" *ngFor="let tl of row.traloi; let idx = index">
+                <mat-label>Câu trả lời {{idx + 1}}</mat-label>
+                <input matInput value="{{tl}}">
+                <br>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="dapan-width" appearance="fill">
+                <mat-label>Đáp án</mat-label>
+                <input matInput value="{{row.dapan}}">
+            </mat-form-field>
+
+        </div>
+    </mat-tab>
+</mat-tab-group>
+<h2>Phần II: Ngữ pháp & Đọc hiểu</h2>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Ngữ pháp 1">
+        <div class="group-cauhoi" *ngFor="let row of listtcauhoi_phan2_part1">
+            <h3>Câu hỏi {{row.id}}</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Câu: {{row.id}}</mat-label>
+                <textarea matInput>{{row.cauhoi}}</textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="traloi-width" appearance="fill" *ngFor="let tl of row.traloi; let idx = index">
+                <mat-label>Câu trả lời {{idx + 1}}</mat-label>
+                <input matInput value="{{tl}}">
+                <br>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="dapan-width" appearance="fill">
+                <mat-label>Đáp án</mat-label>
+                <input matInput value="{{row.dapan}}">
+            </mat-form-field>
+
+        </div>
+    </mat-tab>
+    <mat-tab label="Ngữ pháp 2">
+        <div class="group-cauhoi" *ngFor="let row of listtcauhoi_phan2_part2">
+            <h3>Câu hỏi {{row.id}}</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Câu: {{row.id}}</mat-label>
+                <textarea matInput>{{row.cauhoi}}</textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="traloi-width" appearance="fill" *ngFor="let tl of row.traloi; let idx = index">
+                <mat-label>Câu trả lời {{idx + 1}}</mat-label>
+                <input matInput value="{{tl}}">
+                <br>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="dapan-width" appearance="fill">
+                <mat-label>Đáp án</mat-label>
+                <input matInput value="{{row.dapan}}">
+            </mat-form-field>
+
+        </div>
+    </mat-tab>
+    <mat-tab label="Bài Điền ô trống">
+
+        <h3>Câu hỏi {{listtcauhoi_phan2_part3[0].id}}</h3>
+        <mat-form-field appearance="fill">
+            <textarea matInput cdkTextareaAutosize>{{listtcauhoi_phan2_part3[0].doanvan}}</textarea>
+        </mat-form-field>
+        <br>
+
+        <div class="group-cauhoi" *ngFor="let listtraloi of listtcauhoi_phan2_part3[0].traloi; let idx = index">
+            <h3>Câu hỏi {{idx + 1 }}</h3>
+            <div *ngFor="let row of listtraloi; let idx1 = index">
+                <mat-form-field class="traloi-width" appearance="fill">
+                    <mat-label>Câu hỏi {{idx1 + 1}}</mat-label>
+                    <input matInput value="{{row}}">
+                    <br>
+                </mat-form-field>
+            </div>
+            <br>
+            <mat-form-field class="dapan-width" appearance="fill">
+                <mat-label>Đáp án</mat-label>
+                <input matInput value="">
+            </mat-form-field>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Bài đoạn văn I">
+        <div class="group-cauhoi" *ngFor="let row of listtcauhoi_phan2_part4">
+            <h3>Câu hỏi {{row.id}}</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Câu: {{row.id}}</mat-label>
+                <textarea matInput cdkTextareaAutosize>{{row.doanvan}}</textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Câu: {{row.id}}</mat-label>
+                <textarea matInput>{{row.cauhoi}}</textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="traloi-width" appearance="fill" *ngFor="let tl of row.traloi; let idx = index">
+                <mat-label>Câu trả lời {{idx + 1}}</mat-label>
+                <input matInput value="{{tl}}">
+                <br>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="dapan-width" appearance="fill">
+                <mat-label>Đáp án</mat-label>
+                <input matInput value="{{row.dapan}}">
+            </mat-form-field>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Bài đoạn văn II">
+
+        <h3>Câu hỏi {{listtcauhoi_phan2_part5[0].id}}</h3>
+        <mat-form-field appearance="fill">
+            <textarea matInput cdkTextareaAutosize>{{listtcauhoi_phan2_part5[0].doanvan}}</textarea>
+        </mat-form-field>
+        <br>
+
+        <div class="group-cauhoi" *ngFor="let row of listtcauhoi_phan2_part5[0].cauhoi; let idx = index">
+            <h3>Câu hỏi {{idx+1}}</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Câu: {{idx+1}}</mat-label>
+                <textarea matInput>{{row}}</textarea>
+            </mat-form-field>
+            <br>
+
+
+            <mat-form-field class="traloi-width" appearance="fill" *ngFor="let row_traloi of listtcauhoi_phan2_part5[0].traloi[idx]; let idx1 = index">
+                <mat-label>Câu trả lời {{idx1 + 1}}</mat-label>
+                <input matInput value="{{row_traloi}}">
+                <br>
+            </mat-form-field>
+
+
+
+            <br>
+            <mat-form-field class="dapan-width" appearance="fill">
+                <mat-label>Đáp án</mat-label>
+                <input matInput value="{{row.dapan}}">
+            </mat-form-field>
+        </div>
+    </mat-tab>
+    <mat-tab label="Bài đọc postcard">
+        <mat-form-field>
+
+            <div class="myfilebrowser">
+
+                <mat-toolbar>
+
+                    <!-- Readonly Input to show File names -->
+                    <input matInput [(ngModel)]="myfilename" readonly name="memberContactNo" />
+
+                    <!-- Browse Button -->
+                    <button mat-flat-button color="primary">
+              Browse
+            </button>
+
+                </mat-toolbar>
+
+                <!-- Fetch selected filed on change -->
+                <input type="file" #UploadFileInput id="fileUpload" (change)="fileChangeEvent($event)" name="fileUpload" multiple="multiple" accept="image/*" />
+
+            </div>
+            <div>
+                <img [src]="preview">
+            </div>
+        </mat-form-field>
+    </mat-tab>
+
+</mat-tab-group>
+<h2>Phần III: Nghe hiểu</h2>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="First">
+        <app-uploadimage></app-uploadimage>
+    </mat-tab>
+    <mat-tab label="Second">Content 2</mat-tab>
+    <mat-tab label="Third">Content 3</mat-tab>
+</mat-tab-group>
+
+<button mat-raised-button color="primary" class="text-end" (click)="fnClick()">SAVE</button>

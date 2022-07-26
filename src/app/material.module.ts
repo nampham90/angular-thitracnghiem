@@ -28,6 +28,7 @@ import {MatSelectModule} from "@angular/material/select"
 import {MatStepperModule} from "@angular/material/stepper"
 import {MatTabsModule} from "@angular/material/tabs"
 import {MatSidenavModule} from "@angular/material/sidenav"
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
     exports:[
@@ -58,7 +59,8 @@ import {MatSidenavModule} from "@angular/material/sidenav"
       MatSelectModule,
       MatStepperModule,
       MatTabsModule,
-      MatSidenavModule
+      MatSidenavModule,
+	  MatToolbarModule
 
     ]
   })

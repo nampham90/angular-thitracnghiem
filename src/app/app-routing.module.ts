@@ -15,14 +15,19 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'user', 
-    loadChildren: ()=> import('./board-user/board-user.module')
-    .then(m => m.BoardUserModule) 
+  {
+    path: 'user',
+    loadChildren: () => import('./board-user/board-user.module')
+      .then(m => m.BoardUserModule)
   },
   { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent },
+  {
+    path: 'admin',
+    loadChildren: () => import('./board-admin/admin.module')
+      .then(m => m.AdminModule)
+  },
   { path: '', redirectTo: '', pathMatch: 'full' },
-  { path: '**', component: NotfoundComponent}
+  { path: '**', component: NotfoundComponent }
 ];
 
 @NgModule({

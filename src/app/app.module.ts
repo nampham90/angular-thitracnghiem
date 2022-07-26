@@ -13,7 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
-import { LoadingComponent} from './loading/loading.component'
+import { LoadingComponent } from './loading/loading.component'
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { BaikiemtraComponent } from './board-user/baikiemtra/baikiemtra.component';
@@ -22,13 +22,14 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AdminModule } from './board-admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MaterialModule} from './material.module'
+import { MaterialModule } from './material.module'
 
-import {HttpErrorService} from './http_interceptors/http-error.service'
+import { HttpErrorService } from './http_interceptors/http-error.service'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BoardUserModule } from './board-user/board-user.module';
 import { FooterComponent } from './_footer/footer/footer.component';
 import { DethiModule } from './board-user/dethi/dethi.module';
+import { TaoDeThiModule } from './board-admin/taodethi/taodethi.module';
 
 @NgModule({
   declarations: [
@@ -44,13 +45,13 @@ import { DethiModule } from './board-user/dethi/dethi.module';
     NotfoundComponent,
     LoadingComponent,
     FooterComponent,
-    
+
   ],
   imports: [
     AppRoutingModule,
     AdminModule,
     BrowserModule,
-    
+
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -58,14 +59,15 @@ import { DethiModule } from './board-user/dethi/dethi.module';
     MaterialModule,
     BoardUserModule,
     DethiModule,
+    TaoDeThiModule
   ],
   providers: [
     authInterceptorProviders,
-      {
-        provide: HTTP_INTERCEPTORS,
-        useClass: HttpErrorService,
-        multi: true
-      }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
