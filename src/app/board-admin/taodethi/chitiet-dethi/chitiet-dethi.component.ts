@@ -50,6 +50,8 @@ export class ChitietDethiComponent implements OnInit {
   listtcauhoi_phan2_part4: doanvan_chondapan[] = []
   listtcauhoi_phan2_part5: doanvan_chondapan[] = []
   title = 'angular-material-file-upload-app';
+  uploadedImage: File[] = [];
+  emp: any = new Object;
 
   @ViewChild('UploadFileInput') uploadFileInput: ElementRef;
   myfilename = 'Select File';
@@ -206,6 +208,25 @@ export class ChitietDethiComponent implements OnInit {
       this.uploadFileInput.nativeElement.value = "";
     } else {
       this.myfilename = 'Select File';
+    }
+  }
+
+  fnloadedImage($event: any) {
+    this.uploadedImage.push($event.image1)
+    this.emp.id = $event.cauhoi
+  }
+
+  isImage: boolean
+  isSentences: boolean
+  fnCheck($event: any) {
+    if ($event.index == 0) {
+      this.isImage = true;
+      this.isSentences = false;
+      console.log("tabs is: " + $event.index + "___ isimage " + this.isImage + "___ issentences " + this.isSentences)
+    } else {
+      this.isImage = false;
+      this.isSentences = true;
+      console.log("tabs is: " + $event.index + "___ isimage " + this.isImage + "___ issentences " + this.isSentences)
     }
   }
 

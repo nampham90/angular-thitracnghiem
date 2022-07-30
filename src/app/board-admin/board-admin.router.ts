@@ -12,12 +12,9 @@ const routes: Routes = [
   { path: '', component: BoardAdminComponent },
   {
     path: 'taodethi', component: TaodethiComponent,
-    children: [
-      { path: 'dethi/:id', component: ChitietDethiComponent },
-
-    ]
   },
 
+  { path: 'dethi/:id', component: ChitietDethiComponent },
 
   {
     path: 'listtrinhdo',

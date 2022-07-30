@@ -1,44 +1,40 @@
-<div class="container">
+<mat-grid-list cols="4" rowHeight="100px" gutterSize="15px">
 
-    <mat-grid-list cols="4" rowHeight="100px" gutterSize="15px">
-        <!-- <app-uploadimage [colspan]="2" [rowspan]="2" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage> -->
-        <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background-color]="'lightblue'" [style.border]="'3px solid skyblue'">
-            <div>
-                <img [src]="preview1">
-            </div>
-            <mat-grid-tile-footer>
-                <input type="file" (change)="onImageUpload1($event)">
-            </mat-grid-tile-footer>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background-color]="'lightblue'" [style.border]="'3px solid skyblue'">
-            <div>
-                <img [src]="preview2">
-            </div>
-            <mat-grid-tile-footer>
-                <input type="file" (change)="onImageUpload2($event)">
-            </mat-grid-tile-footer>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background-color]="'lightblue'" [style.border]="'3px solid skyblue'">
-            <div>
-                <img [src]="preview3">
-            </div>
-            <mat-grid-tile-footer>
-                <input type="file" (change)="onImageUpload3($event)">
-            </mat-grid-tile-footer>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background-color]="'lightblue'" [style.border]="'3px solid skyblue'">
-            <div>
-                <img [src]="preview4">
-            </div>
-            <mat-grid-tile-footer>
-                <input type="file" (change)="onImageUpload4($event)">
-            </mat-grid-tile-footer>
-        </mat-grid-tile>
-    </mat-grid-list>
-
-    <div class="form-group">
-        <input type="button" (click)="imageUploadAction()" value="Upload Image">
-    </div>
-
-
-</div>
+    <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background-color]="'lightblue'" [style.border]="'3px solid skyblue'">
+        <div>
+            <img [src]="preview1">
+        </div>
+        <mat-grid-tile-footer>
+            <input type="file" (change)="onImageUpload1($event)">
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background-color]="'lightblue'" [style.border]="'3px solid skyblue'">
+        <div>
+            <img [src]="preview2">
+        </div>
+        <mat-grid-tile-footer>
+            <input type="file" (change)="onImageUpload2($event)">
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background-color]="'lightblue'" [style.border]="'3px solid skyblue'">
+        <div>
+            <img [src]="preview3">
+        </div>
+        <mat-grid-tile-footer>
+            <input type="file" (change)="onImageUpload3($event)">
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background-color]="'lightblue'" [style.border]="'3px solid skyblue'">
+        <div>
+            <img [src]="preview4">
+        </div>
+        <mat-grid-tile-footer>
+            <input type="file" (change)="onImageUpload4($event)">
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+</mat-grid-list>
+<br>
+<mat-form-field class="dapan-width" appearance="fill">
+    <mat-label>Đáp án</mat-label>
+    <input matInput value="1">
+</mat-form-field>

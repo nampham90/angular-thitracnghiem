@@ -16,3 +16,8 @@ td,
 th {
     width: 25%;
 }
+
+.iddethi:hover {
+    background-color: #FFACB7;
+    color: #fff;
+}

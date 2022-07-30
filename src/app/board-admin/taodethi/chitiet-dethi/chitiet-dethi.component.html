@@ -159,7 +159,6 @@
             </mat-form-field>
         </div>
     </mat-tab>
-
     <mat-tab label="Bài đoạn văn II">
 
         <h3>Câu hỏi {{listtcauhoi_phan2_part5[0].id}}</h3>
@@ -167,7 +166,6 @@
             <textarea matInput cdkTextareaAutosize>{{listtcauhoi_phan2_part5[0].doanvan}}</textarea>
         </mat-form-field>
         <br>
-
         <div class="group-cauhoi" *ngFor="let row of listtcauhoi_phan2_part5[0].cauhoi; let idx = index">
             <h3>Câu hỏi {{idx+1}}</h3>
             <mat-form-field appearance="fill">
@@ -175,16 +173,11 @@
                 <textarea matInput>{{row}}</textarea>
             </mat-form-field>
             <br>
-
-
             <mat-form-field class="traloi-width" appearance="fill" *ngFor="let row_traloi of listtcauhoi_phan2_part5[0].traloi[idx]; let idx1 = index">
                 <mat-label>Câu trả lời {{idx1 + 1}}</mat-label>
                 <input matInput value="{{row_traloi}}">
                 <br>
             </mat-form-field>
-
-
-
             <br>
             <mat-form-field class="dapan-width" appearance="fill">
                 <mat-label>Đáp án</mat-label>
@@ -194,24 +187,17 @@
     </mat-tab>
     <mat-tab label="Bài đọc postcard">
         <mat-form-field>
-
             <div class="myfilebrowser">
-
                 <mat-toolbar>
-
                     <!-- Readonly Input to show File names -->
                     <input matInput [(ngModel)]="myfilename" readonly name="memberContactNo" />
-
                     <!-- Browse Button -->
                     <button mat-flat-button color="primary">
               Browse
             </button>
-
                 </mat-toolbar>
-
                 <!-- Fetch selected filed on change -->
                 <input type="file" #UploadFileInput id="fileUpload" (change)="fileChangeEvent($event)" name="fileUpload" multiple="multiple" accept="image/*" />
-
             </div>
             <div>
                 <img [src]="preview">
@@ -222,11 +208,187 @@
 </mat-tab-group>
 <h2>Phần III: Nghe hiểu</h2>
 <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="First">
-        <app-uploadimage></app-uploadimage>
+    <mat-tab label="Mondai 1">
+        Câu 1
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="1" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 2
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="2" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 3
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="3" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 4
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="4" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 5
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="5" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 6
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="6" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 7
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="7" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 8
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="8" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
     </mat-tab>
-    <mat-tab label="Second">Content 2</mat-tab>
-    <mat-tab label="Third">Content 3</mat-tab>
+    <mat-tab label="Mondai 2">
+        Câu 1
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="1" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 2
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="2" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 3
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="3" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 4
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="4" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 5
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="5" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 6
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="6" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+        Câu 7
+        <mat-tab-group (selectedTabChange)="fnCheck($event)">
+            <mat-tab label="Image">
+                <app-uploadimage [cauhoi]="7" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+            </mat-tab>
+            <mat-tab label="Sentences">
+                <app-sentences></app-sentences>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-tab>
+    <mat-tab label="Mondai 3">
+        Câu 1
+        <app-uploadimage [cauhoi]="1" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+        Câu 2
+        <app-uploadimage [cauhoi]="2" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+        Câu 3
+        <app-uploadimage [cauhoi]="3" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+        Câu 4
+        <app-uploadimage [cauhoi]="4" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+        Câu 5
+        <app-uploadimage [cauhoi]="5" (loadedImageChange)="fnloadedImage($event);"></app-uploadimage>
+    </mat-tab>
+    <mat-tab label="Mondai 4">
+        <mat-form-field class="dapan-width" appearance="fill">
+            <mat-label>Đáp án1</mat-label>
+            <input matInput value="1">
+        </mat-form-field>
+        <mat-form-field class="dapan-width" appearance="fill">
+            <mat-label>Đáp án2</mat-label>
+            <input matInput value="1">
+        </mat-form-field>
+        <mat-form-field class="dapan-width" appearance="fill">
+            <mat-label>Đáp án3</mat-label>
+            <input matInput value="1">
+        </mat-form-field>
+        <mat-form-field class="dapan-width" appearance="fill">
+            <mat-label>Đáp án4</mat-label>
+            <input matInput value="1">
+        </mat-form-field>
+        <mat-form-field class="dapan-width" appearance="fill">
+            <mat-label>Đáp án5</mat-label>
+            <input matInput value="1">
+        </mat-form-field>
+        <mat-form-field class="dapan-width" appearance="fill">
+            <mat-label>Đáp án6</mat-label>
+            <input matInput value="1">
+        </mat-form-field>
+        <mat-form-field class="dapan-width" appearance="fill">
+            <mat-label>Đáp án7</mat-label>
+            <input matInput value="1">
+        </mat-form-field>
+    </mat-tab>
 </mat-tab-group>
 
 <button mat-raised-button color="primary" class="text-end" (click)="fnClick()">SAVE</button>
