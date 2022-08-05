@@ -27,12 +27,11 @@
                         <mat-label>Chọn Trình Độ</mat-label>
                         <mat-select formControlName="trinhdo">
                             <mat-option>--</mat-option>
-                            <mat-option *ngFor="let lst of TD" [value]="lst">{{lst}}</mat-option>
+                            <mat-option *ngFor="let lst of list_trinh_do" [value]="lst.id">{{lst.name}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
                 <button type="submit" [disabled]="!formTaodethi.valid" class="btn btn-primary">Submit</button>
-                <input matInput type="button" (click)="changeLoading()" value="change" />
             </form>
         </div>
         <!-- table config -->
@@ -59,13 +58,13 @@
                 <!-- Progress Column -->
                 <ng-container matColumnDef="thoigian">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Thời Gian </th>
-                    <td mat-cell *matCellDef="let row"> {{row.thoigian}} phút </td>
+                    <td mat-cell *matCellDef="let row"> {{row.thoigianthi}} phút </td>
                 </ng-container>
 
                 <!-- Name Column -->
                 <ng-container matColumnDef="trinhdo">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Trình Độ </th>
-                    <td mat-cell *matCellDef="let row"> {{row.trinhdo}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.trinhdo.name}} </td>
                 </ng-container>
 
                 <!-- Fruit Column -->

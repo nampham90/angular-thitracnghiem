@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { DethiserviceService } from 'src/app/_services/dethiservice.service';
 
 import { TrinhdoserviceService } from "../../_services/trinhdoservice.service"
 
@@ -15,6 +16,11 @@ export interface dethi {
   thoigian: number;
   trinhdo: string;
   trangthai: number;
+}
+
+export interface trinhdo {
+  id: number;
+  name: string
 }
 
 @Component({
@@ -32,7 +38,7 @@ export class TaodethiComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   lDethi: dethi[] = [];
-
+  list_trinh_do: trinhdo[] = []
   formTaodethi: FormGroup = new FormGroup({
     tendethi: new FormControl(''),
     thoigianthi: new FormControl(''),
@@ -44,14 +50,16 @@ export class TaodethiComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private trinhDoService: TrinhdoserviceService,
+    private dethiservice: DethiserviceService,
     private router: Router
 
   ) {
-    for (let i = 1; i <= 150; i++) {
-      const Dethi = this.createNewDethi(i);
-      this.lDethi.push(Dethi);
-    }
-    this.dataSource = new MatTableDataSource(this.lDethi);
+    // for (let i = 1; i <= 150; i++) {
+    //   const Dethi = this.createNewDethi(i);
+    //   this.lDethi.push(Dethi);
+    // }
+    this.getListTrinhDo();
+    this.getListDeThi();
   }
 
   ngAfterViewInit() {
@@ -74,40 +82,59 @@ export class TaodethiComponent implements OnInit {
       thoigianthi: ['', Validators.required],
       trinhdo: ['', Validators.required]
     })
-
-
   }
 
   get f(): { [key: string]: AbstractControl } {
     return this.formTaodethi.controls;
   }
 
+  dethiDto = []
   onSubmit() {
-    let data = {
+    let dethiDto1 = {
       tendethi: this.formTaodethi.value.tendethi,
       thoigianthi: this.formTaodethi.value.thoigianthi,
-      trinhdo: this.formTaodethi.value.trinhdo
+      trinhdo: {
+        id: this.formTaodethi.value.trinhdo,
+        name: this.list_trinh_do.find((item) => { if (item.id == this.formTaodethi.value.trinhdo) { return item.name } }).name
+      },
+      trangthai: "Đang cập nhật"
     }
-    console.log(data);
-  }
-  createNewDethi(id: number): dethi {
-    const trdo = this.TD[Math.round(Math.random() * (this.TD.length - 1))]
-    return {
-      id: id.toString(),
-      tendethi: "Đề thì trình độ " + trdo,
-      thoigian: 60,
-      trinhdo: trdo,
-      trangthai: 0
-    }
+
+    this.dethiservice.insertDethi(dethiDto1).subscribe(
+      data => {
+
+        console.log("data sau khi insert: " + data);
+      },
+      err => {
+        console.log("Loi insert: " + err);
+      }
+    );
+    console.log(dethiDto1);
   }
 
-  changeLoading() {
+  getListTrinhDo() {
 
-    this.trinhDoService.getDatatest().subscribe((data) => {
-      console.log(data);
+    this.trinhDoService.getListTrinhdo().subscribe((data) => {
+      this.list_trinh_do = data;
     }, (err) => {
       console.log(err);
 
+    })
+  }
+
+  fnClear() {
+    this.formTaodethi.reset();
+  }
+  getListDeThi() {
+    this.dethiservice.getAllDethi().subscribe((data) => {
+      if (data) {
+        this.lDethi = data
+      } else {
+        this.lDethi = []
+      }
+      this.dataSource = new MatTableDataSource(this.lDethi);
+    }, (err) => {
+      console.log(err)
     })
   }
   fnDetail(id: number) {
